@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "SET VARIABLES"
+echo 127.0.0.1    $DOMAIN >> /etc/hosts
 sed -i.back "s/ZMDOMAIN/$DOMAIN/" /zimbra/zimbra-config
 echo "running zmsetup.pl"
 /opt/zimbra/libexec/zmsetup.pl -c /zimbra/zimbra-config
