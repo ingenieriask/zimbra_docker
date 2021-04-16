@@ -37,6 +37,8 @@ RUN apt-get -qq install -y openjdk-8-jdk
 RUN apt-get -qq install -y debhelper
 RUN apt-get -qq install -y iproute2
 RUN apt-get -qq install -y tzdata
+RUN echo "America/Bogota" > /etc/timezone
+RUN dpkg-reconfigure tzdata
 # Trick build into skipping resolvconf as docker overrides for DNS
 # This is currently required by our installer script. Hopefully be
 # fixed soon.  The `zimbra-os-requirements` packages depends
