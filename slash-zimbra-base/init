@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "SET VARIABLES"
+sed -i.back "s/ZMDOMAIN/$DOMAIN/" /zimbra/zimbra-config
 echo "running zmsetup.pl"
 /opt/zimbra/libexec/zmsetup.pl -c /zimbra/zimbra-config
 echo "stopping services"
