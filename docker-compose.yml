@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   zcs-dev:
-    image: zimbra1:latest
+    image: zimbra:latest
     entrypoint:
       - /zimbra/init
     volumes:
@@ -15,7 +15,7 @@ services:
       - "8993:993"
       - "9998:9998"
       - "9999:9999"
-  environment:
-   DOMAIN=${DOMAIN_ZIMBBRA}
+    environment:
+      - DOMAIN=${DOMAIN_ZIMBBRA}
 volumes:
   opt_zimbra: {}
