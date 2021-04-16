@@ -1,0 +1,21 @@
+version: "3.3"
+
+services:
+  zcs-dev:
+    image: zimbra1:latest
+    entrypoint:
+      - /zimbra/init
+    volumes:
+     - opt_zimbra:/opt/zimbra
+    ports:
+      - "2222:22"
+      - "7071:7071"
+      - "8143:143"
+      - "8443:443"
+      - "8993:993"
+      - "9998:9998"
+      - "9999:9999"
+  environment:
+   DOMAIN=${DOMAIN_ZIMBBRA}
+volumes:
+  opt_zimbra: {}
